@@ -17,18 +17,14 @@ function App() {
     const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
     try {
       const response = await axios.get(apiUrl);
-      if(response.data.location.name === weatherData.location.name){
-        return;
-      }
         setWeatherData(response.data);
         setError('');  
         let a = Math.ceil(Math.random() * (2 - 0) + 0);
         setNum(a);
-        
+      
     } catch (error) {
       setWeatherData('');
       setError(error);
-
     }
   };
 
