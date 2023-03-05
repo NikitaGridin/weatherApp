@@ -14,7 +14,7 @@ function App() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const apiKey = '3e145e3d5d7342df958123040230503'; // Замените YOUR_API_KEY на ваш API ключ OpenWeatherMap
-    const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
     try {
       const response = await axios.get(apiUrl);
       if(response.data.location.name === weatherData.location.name){
